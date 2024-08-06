@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensagem</title>
+  <link rel="stylesheet" href="style.css"> <!-- Usando o mesmo arquivo CSS do segundo documento -->
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: var(--background-color, #f0f0f0); /* Usando variáveis CSS do segundo documento */
+    }
+    .container {
+      text-align: center;
+      background-color: var(--container-bg-color, #fff); /* Usando variáveis CSS do segundo documento */
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .container h1 {
+      font-size: 2rem;
+      color: var(--text-color, #333); /* Usando variáveis CSS do segundo documento */
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: var(--button-bg-color, #007BFF); /* Usando variáveis CSS do segundo documento */
+      color: var(--button-text-color, white); /* Usando variáveis CSS do segundo documento */
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: var(--button-hover-bg-color, #0056b3); /* Usando variáveis CSS do segundo documento */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Duda, Você É Incrível!</h1>
+    <button onclick="window.location.href='original.html'">Iniciar</button>
+  </div>
+</body>
+</html>
