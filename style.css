@@ -984,3 +984,31 @@ body {
 .not-loaded * {
   animation-play-state: paused !important;
 }
+
+/* Estilos para as flores adicionais */
+.flower-adicional {
+  position: absolute;
+  z-index: 1;
+}
+
+.flower-adicional .flower__leafs {
+  transform: scale(0.5);
+}
+
+.flower-adicional .flower__leaf {
+  background-color: var(--cor-petalas);
+}
+
+.flower-adicional .flower__white-circle {
+  background-color: var(--cor-centro);
+}
+
+.flower-adicional .flower__line {
+  height: 50px;
+  width: 2px;
+  background-color: #a1e266;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}

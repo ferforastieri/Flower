@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Fotos da Duda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .gallery img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ff69b4;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="night"></div>
+  <div class="stars"></div>
+  <div class="container">
+    <h1>Nossas Memórias, Duda!</h1>
+    <div class="gallery">
+      <!-- Adicione suas fotos aqui -->
+      <img src="foto1.jpg" alt="Foto 1">
+      <img src="foto2.jpg" alt="Foto 2">
+      <img src="foto3.jpg" alt="Foto 3">
+      <!-- Adicione mais fotos conforme necessário -->
+    </div>
+    <button onclick="window.location.href='menu.html'">Voltar ao Menu</button>
+  </div>
+  <script src="stars.js"></script>
+</body>
+</html>
