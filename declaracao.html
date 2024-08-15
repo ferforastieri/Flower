@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Declaração de Amor e Quiz One Direction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .welcome-screen, .quiz-container, .declaration {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="night"></div>
+  <div class="stars"></div>
+  <div class="container">
+    <h1>Quiz One Direction e Declaração de Amor</h1>
+    
+    <div id="welcome" class="welcome-screen">
+      <h2>Bem-vinda, Duda!</h2>
+      <p>Preparei algo especial para você. Antes de ver minha declaração de amor, que tal um pequeno desafio?</p>
+      <p>Vamos testar seus conhecimentos sobre o One Direction com um quiz divertido!</p>
+      <p>Responda corretamente às perguntas e, no final, você verá uma surpresa especial.</p>
+      <button id="start-quiz">Iniciar Quiz</button>
+    </div>
+
+    <div id="quiz" class="quiz-container hidden">
+      <h2>Quiz One Direction</h2>
+      <p>Responda corretamente para ver a declaração de amor!</p>
+      <div id="question"></div>
+      <div id="choices"></div>
+    </div>
+
+    <div id="declaration" class="declaration hidden">
+      <h2>Minha Declaração de Amor para Você, Duda</h2>
+      <p>Duda, meu amor por você é como as músicas do One Direction: inesquecível e eterno.</p>
+      <p>Cada dia ao seu lado é uma nova aventura, cheia de alegria e emoção.</p>
+      <p>Você é a melodia que faz meu coração cantar, a harmonia que completa minha vida.</p>
+      <p>Te amo mais do que todas as estrelas no céu, mais do que todas as notas musicais do mundo.</p>
+      <p>Obrigado por ser minha "Little Things" e por fazer cada momento especial.</p>
+    </div>
+
+    <button onclick="window.location.href='menu.html'" class="back-button">Voltar ao Menu</button>
+  </div>
+
+  <script src="stars.js"></script>
+  <script>
+    const questions = [
+      {
+        question: "Qual é o nome do primeiro álbum do One Direction?",
+        choices: ["Up All Night", "Take Me Home", "Midnight Memories"],
+        correct: 0
+      },
+      {
+        question: "Em que ano o One Direction foi formado?",
+        choices: ["2009", "2010", "2011"],
+        correct: 1
+      },
+      {
+        question: "Qual membro deixou a banda em 2015?",
+        choices: ["Harry Styles", "Niall Horan", "Zayn Malik"],
+        correct: 2
+      },
+      {
+        question: "Qual é o título da música que contém a frase 'You don't know you're beautiful'?",
+        choices: ["What Makes You Beautiful", "Story of My Life", "Best Song Ever"],
+        correct: 0
+      },
+      {
+        question: "Em qual programa de TV o One Direction foi formado?",
+        choices: ["American Idol", "The X Factor", "Britain's Got Talent"],
+        correct: 1
+      },
+      {
+        question: "Qual é o nome do último álbum lançado pelo One Direction antes do hiato?",
+        choices: ["Four", "Made in the A.M.", "Take Me Home"],
+        correct: 1
+      },
+      {
+        question: "Qual membro do One Direction nasceu na Irlanda?",
+        choices: ["Louis Tomlinson", "Liam Payne", "Niall Horan"],
+        correct: 2
+      },
+      {
+        question: "Qual é o título da música que começa com 'You're insecure, don't know what for'?",
+        choices: ["One Thing", "What Makes You Beautiful", "Live While We're Young"],
+        correct: 1
+      }
+    ];
+
+    let currentQuestion = 0;
+
+    document.getElementById('start-quiz').onclick = () => {
+      document.getElementById('welcome').classList.add('hidden');
+      document.getElementById('quiz').classList.remove('hidden');
+      loadQuestion();
+    };
+
+    function loadQuestion() {
+      const q = questions[currentQuestion];
+      document.getElementById('question').textContent = q.question;
+      const choices = document.getElementById('choices');
+      choices.innerHTML = '';
+      q.choices.forEach((choice, index) => {
+        const button = document.createElement('button');
+        button.textContent = choice;
+        button.onclick = () => checkAnswer(index);
+        choices.appendChild(button);
+      });
+    }
+
+    function checkAnswer(index) {
+      if (index === questions[currentQuestion].correct) {
+        alert('Resposta correta!');
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          loadQuestion();
+        } else {
+          document.getElementById('quiz').classList.add('hidden');
+          document.getElementById('declaration').classList.remove('hidden');
+        }
+      } else {
+        alert('Resposta incorreta. Tente novamente!');
+      }
+    }
+  </script>
+</body>
+</html>
